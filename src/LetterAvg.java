@@ -115,10 +115,10 @@ public class LetterAvg {
 				j++;
 			}
 		}
-		for(int k = 0; k < j; k++)	{
+		for(int k = 0; k < j - 1; k++)	{
 			output += sameLetter[k] + "\n";
 		}
-		output += sameLetter[j];
+		output += sameLetter[j - 1];
 		return output;
 	}
 }
