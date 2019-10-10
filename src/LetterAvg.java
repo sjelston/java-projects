@@ -80,34 +80,6 @@ public class LetterAvg {
 		}
 		br.close();
 	}
-		/*	Scanner sc = new Scanner(new File (fileName));
-		String strg = sc.nextLine();
-		for(int j = 0; j < 2; j++)
-		{
-			strg = sc.nextLine();
-		}
-
-		int i = 0;
-		while (sc.hasNextLine())
-		{
-			strg = sc.next();
-				
-			if (i < stationID.length)
-			{
-				stationID[i] = strg;
-			}
-			else
-			{
-				stationID = increaseArray(stationID);
-				stationID[i] = strg;
-			}
-			i++;
-			strg = sc.nextLine();
-		}
-		
-		sc.close();
-	}
-	*/
 	
 	/**
 	 * This methods makes an array one element larger while maintaining
