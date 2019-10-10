@@ -40,7 +40,7 @@ public class PosAvg {
 	 * @param stID This is the station ID inputed.
 	 * @throws Exception 
 	 */
-	public PosAvg(String stID) throws Exception	{
+	public PosAvg(String stID) throws IOException	{
 		this.stID = stID;
 		read("Mesonet.txt");
 		avgStations();
@@ -53,7 +53,6 @@ public class PosAvg {
 	 * @throws Exception
 	 */
 	public int indexOfStation()	{
-		//read("Mesonet.txt");
 		
 		int index = 0;
 		for(int i = 0; i < stationID.length; i++)
@@ -93,9 +92,9 @@ public class PosAvg {
 	public void read(String fileName) throws IOException
 	{
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
-		String ID = null;
+		String ID = "";
 		String strg = br.readLine();
-		// may need to change to i < 1
+
 		for(int i = 0; i < 2; i++)
 		{
 			br.readLine();
@@ -103,8 +102,8 @@ public class PosAvg {
 		
 		int count = 0;
 		while (!((strg = br.readLine()) == null))	{
-			for (int j = 0; j < 4; j++)	{
-				ID = ID + strg.charAt(j);
+			for (int j = 1; j < 5; j++)	{
+				ID += strg.charAt(j);
 			}
 			if (count < stationID.length)	{
 				stationID[count] = ID;
@@ -114,7 +113,7 @@ public class PosAvg {
 				stationID[count] = ID;
 			}
 			count++;
-			ID = null;
+			ID = "";
 		}
 		br.close();
 	}
