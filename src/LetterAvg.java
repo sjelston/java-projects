@@ -139,6 +139,6 @@ public class LetterAvg {
 				output += temp + "\n";
 			}
 		}
-		return output + "\n";
+		return output;
 	}
 }

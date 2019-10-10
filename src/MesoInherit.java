@@ -49,8 +49,15 @@ public class MesoInherit extends MesoAbstract	{
 	 */
 	@Override
 	char letterAverage() {
-		int avg = averages[2];
-		char letterAvg = (char)avg;
+		double first = (int)stID.charAt(0);
+		double second = (int)stID.charAt(1);
+		double third = (int)stID.charAt(2);
+		double fourth = (int)stID.charAt(3);
+		
+		double avg = (first + second + third + fourth)/4;
+		int average = (int) Math.round(avg);
+		
+		char letterAvg = (char)average;
 		return letterAvg;
 	}
 }
