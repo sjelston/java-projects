@@ -132,13 +132,13 @@ public class LetterAvg {
      */
 	@Override
 	public String toString()	{
-		String output = "\nThey are: \n";
+		String output = "\nThey are:" + "\n";
 		for(int i = 0; i < stationID.length; i++)	{
 			String temp = stationID[i];
 			if ((temp.charAt(0)) == letter)	{
 				output += temp + "\n";
 			}
 		}
-		return output;
+		return output + "\n";
 	}
 }
