@@ -35,8 +35,8 @@ public class MesoInherit extends MesoAbstract	{
 		
 		double avg = (first + second + third + fourth)/4;
 		
-		averages[0] = (int) Math.floor(avg);
-		averages[1] = (int) Math.ceil(avg);
+		averages[0] = (int) Math.ceil(avg);  
+		averages[1] = (int) Math.floor(avg);
 		averages[2] = (int) Math.round(avg);
 		
 		return averages;
