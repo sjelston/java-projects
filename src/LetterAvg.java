@@ -8,6 +8,9 @@ public class LetterAvg {
 	 */
 	private String stationID[] = new String[15];
 	
+	/**
+	 * The letter average to be used for the LetterAvg object
+	 */
 	private char letter;
 	
 	/**
@@ -21,6 +24,12 @@ public class LetterAvg {
 		read("Mesonet.txt");
 	}
 	
+	/**
+	 * Determines the number of station IDs within Mesonet.txt that begin with the letter corresponding
+	 * to the letter average of a station ID.
+	 * 
+	 * @return The number of station IDs starting with the letter average.
+	 */
 	public int numberOfStationWithLetterAvg()	{
 		int stations = 0;
 		for(int i = 0; i < stationID.length; i++)
@@ -84,5 +93,23 @@ public class LetterAvg {
 		String[] newArray = new String[array.length + 1];
 		System.arraycopy(array, 0, newArray, 0, (array.length));
 		return newArray;
+	}
+	
+	/**
+     * toString override. Gives the station IDs starting with the letter average.
+     * 
+     * @return Station IDs beginning with the letter average in the format:
+     * They are: \n <ID1> \n <ID2> \n <ID3> \n .... <IDn>
+     */
+	@Override
+	public String toString()	{
+		String output = "They are: \n";
+		for(int i = 0; i < stationID.length; i++)	{
+			String temp = stationID[i];
+			if ((temp.charAt(0)) == letter)	{
+				output += temp + "\n";
+			}
+		}
+		return output;
 	}
 }
