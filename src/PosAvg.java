@@ -1,5 +1,6 @@
-import java.io.File;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class PosAvg {
 
@@ -89,34 +90,33 @@ public class PosAvg {
 	 * @param fileName The file to be read into stationID
 	 * @throws Exception
 	 */
-	public void read(String fileName) throws Exception
+	public void read(String fileName) throws IOException
 	{
-		Scanner sc = new Scanner(new File (fileName));
-		String strg = sc.nextLine();
-		for(int j = 0; j < 2; j++)
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		String ID = null;
+		String strg = br.readLine();
+		// may need to change to i < 1
+		for(int i = 0; i < 2; i++)
 		{
-			strg = sc.nextLine();
-		}
-
-		int i = 0;
-		while (sc.hasNextLine())
-		{
-			strg = sc.next();
-				
-			if (i < stationID.length)
-			{
-				stationID[i] = strg;
-			}
-			else
-			{
-				stationID = increaseArray(stationID);
-				stationID[i] = strg;
-			}
-			i++;
-			strg = sc.nextLine();
+			br.readLine();
 		}
 		
-		sc.close();
+		int count = 0;
+		while (!((strg = br.readLine()) == null))	{
+			for (int j = 0; j < 4; j++)	{
+				ID = ID + strg.charAt(j);
+			}
+			if (count < stationID.length)	{
+				stationID[count] = ID;
+			}
+			else	{
+				stationID = increaseArray(stationID);
+				stationID[count] = ID;
+			}
+			count++;
+			ID = null;
+		}
+		br.close();
 	}
 	
 	/**

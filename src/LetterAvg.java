@@ -1,5 +1,6 @@
-import java.io.File;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class LetterAvg {
 
@@ -48,11 +49,38 @@ public class LetterAvg {
 	 * ID in the stationID array, enlarging it when necessary.
 	 * 
 	 * @param fileName The file to be read into stationID
+	 * @throws IOException 
 	 * @throws Exception
 	 */
-	public void read(String fileName) throws Exception
+	public void read(String fileName) throws IOException
 	{
-		Scanner sc = new Scanner(new File (fileName));
+		BufferedReader br = new BufferedReader(new FileReader(fileName));
+		String ID = null;
+		String strg = br.readLine();
+		// may need to change to i < 1
+		for(int i = 0; i < 2; i++)
+		{
+			br.readLine();
+		}
+		
+		int count = 0;
+		while (!((strg = br.readLine()) == null))	{
+			for (int j = 0; j < 4; j++)	{
+				ID = ID + strg.charAt(j);
+			}
+			if (count < stationID.length)	{
+				stationID[count] = ID;
+			}
+			else	{
+				stationID = increaseArray(stationID);
+				stationID[count] = ID;
+			}
+			count++;
+			ID = null;
+		}
+		br.close();
+	}
+		/*	Scanner sc = new Scanner(new File (fileName));
 		String strg = sc.nextLine();
 		for(int j = 0; j < 2; j++)
 		{
@@ -79,6 +107,7 @@ public class LetterAvg {
 		
 		sc.close();
 	}
+	*/
 	
 	/**
 	 * This methods makes an array one element larger while maintaining
