@@ -1,6 +1,6 @@
 # proj2F19
 
-## Overview
+#### Overview
 
 **General Behavior**
 
@@ -27,7 +27,7 @@ A sample output for the input station ID "NRMN" would look like this:
 	OKEM
 	OKMU
 
-## Classes
+### Classes
 
 **MesoAbstract.java**	*An abstract class to create methods for MesoInherit.java to implement.*
 
@@ -86,7 +86,7 @@ Methods:
 																	placed into the private field String array stationID, enlarged 
 																	when necessary.
 	public String[] increaseArray(String[] array)		This methods makes an array one element larger while maintaining 
-															the original array's contents
+															the original array's contents.
 	
 	public String toString()		toString() override. Gives information on index averages for the given station ID.
 	
@@ -98,18 +98,19 @@ Variables:
 
 	private String stationID[]		String array to hold station IDs.
 		= new String[15]
-		
 	private char letter		Used to hold the character representing the average, determined in another method.
 	
 Methods:
 
-	public LetterAvg(char avg) throws IOException		
+	public LetterAvg(char avg) throws IOException		Constructor for LetterAvg.  Sets the private field letter from input and reads 
+															in Mesonet.txt file to the stationID array.
 	
-	public int numberOfStationWithLetterAvg()		
+	public int numberOfStationWithLetterAvg()		Calculates the number of stations that begin with the character corresponding to the letter average.
 	
-	public void read(String fileName) throws IOException		
-	
-	public String[] increaseArray(String[] array)		
-	
-	public String toString()		
+	public void read(String fileName) throws IOException		Reads through a file and obtains the station IDs which are then 
+																	placed into the private field String array stationID, enlarged 
+																	when necessary.
+	public String[] increaseArray(String[] array)		This methods makes an array one element larger while maintaining 
+															the original array's contents.
+	public String toString()		toString() override. Gives the station IDs starting with the specified letter average.
 	
