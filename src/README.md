@@ -96,5 +96,20 @@ Methods:
 
 Variables:
 
+	private String stationID[]		String array to hold station IDs.
+		= new String[15]
+		
+	private char letter		Used to hold the character representing the average, determined in another method.
 	
+Methods:
+
+	public LetterAvg(char avg) throws IOException		
+	
+	public int numberOfStationWithLetterAvg()		
+	
+	public void read(String fileName) throws IOException		
+	
+	public String[] increaseArray(String[] array)		
+	
+	public String toString()		
 	
