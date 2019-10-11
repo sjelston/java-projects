@@ -33,12 +33,12 @@ A sample output for the input station ID "NRMN" would look like this:
 
 Variables:
 	
-	private String stID
+	private String stID		Private field to hold the object's station ID.
 
 Methods:
 
-	public MesoStation(String stId)
-	public String getStID()
+	public MesoStation(String stId)		Constructor for MesoStation object, sets private field stID.
+	public String getStID()		Getter method to retrieve stID.
 
 **MesoAbstract.java**	*An abstract class to create methods for MesoInherit.java to implement.*
 
