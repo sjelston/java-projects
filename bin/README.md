@@ -29,6 +29,17 @@ A sample output for the input station ID "NRMN" would look like this:
 
 ### Classes
 
+**MesoStation.java**	*Class provided to us*
+
+Variables:
+	
+	private String stID
+
+Methods:
+
+	public MesoStation(String stId)
+	public String getStID()
+
 **MesoAbstract.java**	*An abstract class to create methods for MesoInherit.java to implement.*
 
 Methods:

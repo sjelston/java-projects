@@ -48,7 +48,7 @@ public class PosAvg {
 	}
 	
 	/**
-	 * Finds the index of the station ID within the text file
+	 * Finds the index of the station ID within the text file Mesonet.txt
 	 * 
 	 * @return An integer representing the index.
 	 * @throws Exception

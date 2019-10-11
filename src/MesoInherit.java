@@ -11,7 +11,7 @@ public class MesoInherit extends MesoAbstract	{
 	private String stID;
 	
 	/**
-	 * Constructor for MesoInherit objects.  Sets private field stID from input.
+	 * Constructor for MesoInherit objects.  Sets private field stID from MesoStation input object.
 	 * 
 	 * @param station The MesoStation object to be used within MesoInherit
 	 */
