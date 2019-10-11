@@ -35,7 +35,8 @@ public class PosAvg {
 	private String avgPlus2;
 	
 	/**
-	 * Constructor for PosAvg.  Sets the private field stID
+	 * Constructor for PosAvg.  Sets the private field stID and reads in Mesonet.txt file to
+	 * the stationID array and calls avgStations().
 	 * 
 	 * @param stID This is the station ID inputed.
 	 * @throws Exception 
